@@ -1,0 +1,90 @@
+﻿<Window xmlns:controls="clr-namespace:TestCompany.controls"  x:Class="TestCompany.EmployeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestCompany"
+        mc:Ignorable="d"
+        Title="Employee" Height="600" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="Resources/background.png"  Stretch="UniformToFill"/>
+    </Window.Background>
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        
+        <Grid Grid.Row="0" Grid.ColumnSpan="2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+
+            <!--Form title -->
+            <TextBlock Grid.Column="0" Name="txtOpenStatus" Text="[Employee View Status]" Padding="15" FontSize="25" FontWeight="Light" />
+
+            
+            <StackPanel Grid.Column="1" >
+                <Border Padding="0,10,10,20">
+                    <!--Form user actions: save, cancel-->
+                    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                        <controls:btnImage x:Name="btnSave" Img="Resources/check_blue.png" Caption="Save" />
+                        <controls:btnImage x:Name="btnCancel" Img="Resources/cross_red.png" Caption="Cancel" />
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+        </Grid>
+
+        
+        <Separator Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,2,0,0" />
+
+
+        <!--Bound edit controls-->
+        <Border Grid.Row="2" Margin="20,30,20,0" Grid.ColumnSpan="2" >
+
+            <StackPanel>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <!--Emp Name-->
+                    <controls:textEdit Caption="Name" Text="{Binding Name, Mode=TwoWay}" Grid.Column="0" HorizontalAlignment="Stretch" Margin="0,0,20,0" />
+                    <!--Emp SurName-->
+                    <controls:textEdit Caption="Surname" Text="{Binding SurName, Mode=TwoWay}" Grid.Column="1"  HorizontalAlignment="Stretch"  />
+                    
+                </Grid>
+
+                <!--Emp JobTitle-->
+                <controls:textEdit Caption="Job title" Text="{Binding JobTitle, Mode=TwoWay}" Grid.Column="0" HorizontalAlignment="Stretch" Margin="0,20,0,0" />
+
+
+                <Grid Margin="0,20,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!--Emp Mail-->
+                    <controls:textEdit Caption="Mail" Text="{Binding Mail, Mode=TwoWay}" Grid.Column="0" HorizontalAlignment="Stretch" Margin="0,0,20,0" />
+                    <!--Emp Age-->
+                    <controls:textEdit Caption="Age" Text="{Binding Age, Mode=OneTime}" Grid.Column="1"  HorizontalAlignment="Left"  />
+                    
+                </Grid>
+
+            </StackPanel>
+
+
+        </Border>
+
+
+    </Grid>
+</Window>

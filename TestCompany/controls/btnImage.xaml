@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="TestCompany.controls.btnImage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TestCompany.controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Button Name="btn" FontSize="20" Click="btn_Click" MinWidth="120" Margin="0,0,10,0">
+        <StackPanel Orientation="Horizontal">
+            <Image Name="img" Width="40" Margin="0,5,0,0" />
+            <TextBlock Name="caption" Margin="0,9,0,0" FontWeight="Light" />
+        </StackPanel>
+    </Button>
+</UserControl>
